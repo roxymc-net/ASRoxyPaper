@@ -67,8 +67,13 @@ paperweight {
     remapRepo.set(paperMavenPublicUrl)
     decompileRepo.set(paperMavenPublicUrl)
 
-    usePaperUpstream(providers.gradleProperty("paperRef")) {
-        withPaperPatcher {
+    useStandardUpstream("roxyPaper") {
+        url = github("roxymc-net", "RoxyPaper")
+        ref = providers.gradleProperty("roxyPaperRef")
+
+        withStandardPatcher {
+            baseName("RoxyPaper")
+
             apiPatchDir.set(layout.projectDirectory.dir("patches/api"))
             apiOutputDir.set(layout.projectDirectory.dir("slimeworldmanager-api"))
 
@@ -78,7 +83,7 @@ paperweight {
             patchTasks {
                 register("generatedApi") {
                     isBareDirectory.set(true)
-                    upstreamDirPath.set("paper-api-generator/generated")
+                    upstreamDirPath.set("../paper/paper-api-generator/generated")
                     patchDir.set(layout.projectDirectory.dir("patches/generatedApi"))
                     outputDir.set(layout.projectDirectory.dir("paper-api-generator/generated"))
                 }
