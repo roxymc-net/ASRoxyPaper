@@ -5,10 +5,10 @@ Subject: [PATCH] Compile fixes
 
 
 diff --git a/build.gradle.kts b/build.gradle.kts
-index f947b82537e5858dd0020a7a6fff48c54f3b49a3..316d03791a97af50f882c0271cbacf3d2a7af5b3 100644
+index 20c0fab062dd88ce76cf1b0202196c957f975dfb..102593e797af26031ab2dc5ee46ab12cf569cf95 100644
 --- a/build.gradle.kts
 +++ b/build.gradle.kts
-@@ -17,9 +17,6 @@ dependencies {
+@@ -23,9 +23,6 @@ dependencies {
      // ASWM start
      implementation(project(":slimeworldmanager-api"))
      implementation(project(":core"))

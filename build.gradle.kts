@@ -58,6 +58,7 @@ subprojects {
     repositories {
         mavenCentral()
         maven(paperMavenPublicUrl)
+        maven("https://repo.roxymc.net/snapshots")
     }
 }
 
